@@ -1,0 +1,20 @@
+- @page_title = @category.name
+.container
+  .linepad
+    %h2.catname= @category.name
+    %h6.catdescription= @category.description
+    %table.listing{:summary => "Product list"}
+      - @products.each do |product|
+        %tr
+          %td.lineimage= image_tag product.image.linepreview.url
+          %td
+            .productname= product.name
+            %table
+              %tr
+                %td
+              %tr
+                %td Vol.
+                %td= render inline: (product.volume.to_s + " ml")
+              %tr
+                %td Price: $
+                %td= product.price

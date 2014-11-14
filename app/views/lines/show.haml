@@ -1,0 +1,25 @@
+- @page_title = @line.name
+=image_tag @line.banner.to_s, class: "nopad img_responsive col-lg-12 col-sm-12 col-12 col-xs-12"
+.container-fluid.lineview{:class => "c_" + @line.color}
+  - @products.each do |product|
+    .col-xs-12.col-sm-6.col-md-4
+      .productunit
+        -if product.image.linepreview.url
+          .lineimage= image_tag product.image.linepreview.url
+        -else
+          .lineimage= image_tag "blank300.png"
+        .data
+          
+          .name= product.name
+          %hr.rule
+          -if product.description
+            .description= render inline: (product.description.to_s)
+          %hr.rule.clear
+          .secondline
+            .vol= render inline: ("Vol. " + product.volume.to_s + " ml")
+            -if product.price
+              %span.pipe
+                |
+              .price= render inline: ("Price: $" + product.price.to_s + "")
+
+          

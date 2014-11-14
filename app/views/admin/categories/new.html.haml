@@ -1,0 +1,8 @@
+- @page_title = "New Category"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.categories.new
+  %h2 Create Product Category
+  = form_for(:category, :url => {:action => 'create'}) do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Create Category")

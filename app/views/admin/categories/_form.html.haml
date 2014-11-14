@@ -1,0 +1,23 @@
+/error_messages_for(@category)
+%table{:summary => "Category form fields"}
+  %tr
+    %th= f.label(:name, "Name")
+    %td= f.text_field(:name)
+  %tr
+    %th= f.label(:description, "Description")
+    %td= f.text_area(:description, :size=> '60x5')
+  %tr
+    %th= f.label(:note, "Note")
+    %td= f.text_area(:note, :size=> '60x5')
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@category_count)
+  %tr
+    %th= f.label(:visible)
+    %td= f.check_box(:visible)
+  %tr
+    %th= f.label(:permalink)
+    %td= f.text_field(:permalink)
+  %tr
+    %th= f.label(:banner)
+    %td= f.file_field(:banner)

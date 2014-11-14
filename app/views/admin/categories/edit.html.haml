@@ -1,0 +1,8 @@
+- @page_title = "Update Category"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.categories.new
+  %h2 Edit Product Category
+  = form_for [:admin, @category], :html => {:multipart => true} do |f|
+    = render(:partial => "form", :locals => {:f => f})
+    .form-buttons
+      = submit_tag("Update Category")

@@ -1,0 +1,9 @@
+- @page_title = "Delete Product"
+= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link')
+.categories.delete
+  %h2 Delete Product
+  = form_for(:product, :method => :delete, :url => {:action => 'destroy', :id => @category.id}) do |f|
+    %p Are you sure you want to permanently delete this product category?
+    %p.reference-name= @category.name
+    .form-buttons
+      = submit_tag("Delete Category")

@@ -1,0 +1,22 @@
+$mainfont: Muli;
+@import "bootstrap";
+.btn-sq {
+  @extend .btn-primary;
+  background-color: #333;
+  border-radius: 0px;
+  // more stuff
+}
+
+.navbar-bella{
+	@extend .navbar-inverse;
+	background-color: #555;
+}
+
+.navbar-nav-sq {
+	@extend .navbar-nav;
+	a {
+		color : #ffff;
+		font-family: $mainfont;
+		font-size: 1.2em;
+	}
+}

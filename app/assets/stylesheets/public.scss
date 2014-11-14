@@ -1,0 +1,357 @@
+/* Public stylesheet */
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+/* Colors
+red:          #993120
+green:        #94B26F
+light green:  #B6D491
+yellow:       #F2DC87
+dark brown:   #332318
+light brown:  #4C2516
+*/
+
+$lineopacity: 0.5;
+$LineButtonOpacity: 0.2;
+$mainfont: Muli;
+/*Line Colors:*/
+.c_9c8ec4 { background-color: fade-out(#9c8ec4, $lineopacity)}
+.c_a66527 { background-color: fade-out(#a66527, $lineopacity)}
+.c_fdb715 { background-color: fade-out(#fdb715, $lineopacity)}
+.c_f6a3be { background-color: fade-out(#f6a3be, $lineopacity)}
+.c_4f1d11 { background-color: fade-out(#4f1d11, $lineopacity)}
+.c_037d8c { background-color: fade-out(#037d8c, $lineopacity)}
+.c_619bd3 { background-color: fade-out(#619bd3, $lineopacity)}
+.c_ba5227 { background-color: fade-out(#ba5227, $lineopacity)}
+.c_203e51 { background-color: fade-out(#203e51, $lineopacity)}
+.c_15467b { background-color: fade-out(#15467b, $lineopacity)}
+.c_5a266a { background-color: fade-out(#5a266a, $lineopacity)}
+.c_4b5a28 { background-color: fade-out(#4b5a28, $lineopacity)}
+.c_8c969c { background-color: fade-out(#8c969c, $lineopacity)}
+
+.o_9c8ec4 { background-color: fade-out(#9c8ec4, $LineButtonOpacity)}
+.o_a66527 { background-color: fade-out(#a66527, $LineButtonOpacity)}
+.o_fdb715 { background-color: fade-out(#fdb715, $LineButtonOpacity)}
+.o_f6a3be { background-color: fade-out(#f6a3be, $LineButtonOpacity)}
+.o_4f1d11 { background-color: fade-out(#4f1d11, $LineButtonOpacity)}
+.o_037d8c { background-color: fade-out(#037d8c, $LineButtonOpacity)}
+.o_619bd3 { background-color: fade-out(#619bd3, $LineButtonOpacity)}
+.o_ba5227 { background-color: fade-out(#ba5227, $LineButtonOpacity)}
+.o_203e51 { background-color: fade-out(#203e51, $LineButtonOpacity)}
+.o_15467b { background-color: fade-out(#15467b, $LineButtonOpacity)}
+.o_5a266a { background-color: fade-out(#5a266a, $LineButtonOpacity)}
+.o_4b5a28 { background-color: fade-out(#4b5a28, $LineButtonOpacity)}
+.o_8c969c { background-color: fade-out(#8c969c, $LineButtonOpacity)}
+.brdr {
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+	
+}
+
+/* status_tag */
+.tabl td { padding: 5px;}
+.blacktext { color: black;}
+.whitetext { color: white;}
+.pad { padding: 5px;}
+.nopad {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+.line_buttons{
+    font-size: 0.6em;
+    text-transform: capitalize;
+    word-break:break-all;
+    letter-spacing: 1px;
+    &:first-line {
+        font-size: 1.2em;
+        color: black;
+    }
+    a {
+        color: black;
+        &:hover {color: black}
+    }
+}
+.cat_buttons{
+    font-size: 0.5em;
+    text-transform: capitalize;
+    word-break:break-all;
+    letter-spacing: 1px;
+    &:first-line {
+        font-size: 1.5em;
+        color: black;
+    }
+    a {
+        color: black;
+        &:hover {color: black}
+    }
+}
+
+
+.lname {
+    a {
+        font-family: $mainfont, sans-serif; font-size: 1em; font-weight: bold; color: #f00;
+        &:hover {color: #fff; text-decoration: underline}
+        &:link {color: #fff; text-decoration: none}
+    }
+}
+
+.ldescription {
+    a {
+        font-family: $mainfont, sans-serif; font-size: 2em; font-weight: bold; color: #fff;
+        &:link {color: #eee; text-decoration: none}
+        &:hover {color: #eee; text-decoration: none}
+    }
+}
+html { 
+    background-color: #ccc;
+
+    // background-color: #ccc;
+    // -webkit-background-size: cover; 
+    // -moz-background-size: cover; 
+    // background-size: cover; 
+    // -o-background-size: cover
+}
+.mainbox { 
+    background-color: #ccc; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    
+    font-family: $mainfont,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+p { 
+    font-family: $mainfont
+   
+}
+
+.rule {
+    padding: 0;
+    margin: 0;
+
+}
+img { border: none; }
+table { border-collapse: collapse; }
+/*table tr th, table tr td { vertical-align: top; text-align: left;
+  padding: 3px; }*/
+
+.clear { clear: both; }
+.center { text-align: center; }
+
+#footer { 
+    vertical-align: center; 
+    margin: auto; 
+    background-color: #aaa; 
+    clear: both; 
+    height: 1.5em; 
+    text-align: center;
+    background: #777; 
+    color: #ddd; }
+.copyright { font-family: '$mainfont'}
+
+/* Navigation */
+.navbar,
+.navbar-nav,
+.navbar-header,
+.mainnav {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav{
+    padding: 0;
+    margin: 0;
+    align: right;
+    text-decoration: none;
+    vertical-align: bottom;
+    a{
+        
+        color: #fff;
+
+    }
+}
+.mainpage{
+    margin: 0;
+    align: center;
+    width: 100%;
+    background-color: #444;
+}
+.navbar{
+    margin: 0 !important;
+    width: 100%;
+    align: right;
+    background-color: #777;
+    border-radius: 0px !important;
+    border: 0;
+    padding: 0px
+}
+.small-brand,{
+    display: inline-block;
+    padding: 5px 5px;
+}
+
+.img-border {
+    float: none;
+    margin: 0 auto 0;
+    border: #999999 solid 1px;
+}
+
+.img-left {
+    float: none;
+    margin: 0 auto 0;
+}
+
+
+//ProductUnit//////////////////
+
+
+
+.productunit{
+    margin-bottom: 25px;
+    float: left; 
+    width: 280px;
+    align: center;
+    border: 1;
+    border-color: #fff;
+    border-width: 3px;
+    .lineimage{
+        padding: 0;
+        margin: 0;
+        float: left; 
+        img{
+            float: left;
+            align: center;  
+        }
+    }
+    .data{
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        %hr {
+            padding: 0;
+        }
+        .name {
+            text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 600;
+            min-width:280px;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-family: $mainfont,Times,serif;
+        }
+        .secondline {
+            .vol {
+                
+                min-width:138px;
+                float: left;
+                text-align: center;
+                font-family: $mainfont,Times,serif;
+                padding-top: 2px;
+                font-weight: 600;
+            }
+            .price {
+                
+                min-width:138px;
+                float: left;
+                text-align: center;
+                font-family: $mainfont,Times,serif;
+                padding-top: 2px;
+                font-weight: 600;
+            }
+        }
+        .description {
+            margin: auto;
+            width:280px;
+            float: left;
+            text-align: justify;
+            font-family: $mainfont,Times,serif;
+            background-color: fade-out(#fff, 0.7);
+            padding: 7px;
+        }
+    }
+}
+.pipe {
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:768px) {
+
+    .brand {
+        float: left;
+        margin: 0;
+        height: 20px;
+        padding: 0;
+        // text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+        font-family: "Dancing Script",Times,serif;
+        font-size: 5em;
+        // font-weight: 10;
+        line-height: normal;
+        color: #aaa;
+    }
+
+    .navbar-header {
+    
+    }
+
+    .navbar {
+        vertical-align: bottom;
+        margin: 0;
+        min-height: 0;
+        border-radius: 0;
+    }
+
+    .nav>li>a {
+        
+    
+    }
+
+    .navbar-nav>li>a {
+        
+        line-height: normal;
+        text-color: #0ff;
+    }
+
+    .navbar-nav {
+        color: #fff;
+        display: table;
+        float: right;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 0.75em;
+    }
+}
+
+@media screen and (min-width:1200px) {
+.body,
+.container,
+.container-fluid,
+.maincont,
+.lineview,
+.img-responsive,
+.banner{ 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+    .box:after {
+        content: '';
+        clear: both;
+    }
+}

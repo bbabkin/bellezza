@@ -1,0 +1,22 @@
+- @page_title = "Categories"
+.categories.index
+  = link_to("Back to Admin", admin_path, :class => 'btn btn-primary')
+  %h2 Product Categories
+  = link_to(" Add New Category", {:action => 'new'}, :class => 'btn btn-primary')
+  %div
+    = "#{pluralize(@categories.size, 'product category')} found"
+  %table.listing{:summary => "Product Category list"}
+    %tr.header
+      %th &#160;
+      %th Product Category
+      %th Visible
+      %th Actions
+    - @categories.each do |category|
+      %tr{:class => cycle('odd', 'even')}
+        %td= category.position
+        %td= category.name
+        %td.center= status_tag(category.visible)
+        %td.actions
+          = link_to("Show", {:action => 'show', :id => category.id}, class: "btn btn-primary")
+          = link_to("Edit", {:action => 'edit', :id => category.id}, class: "btn btn-primary")
+          = link_to("Delete", {:action => 'delete', :id => category.id}, class: "btn btn-primary")

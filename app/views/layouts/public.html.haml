@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "Bellezza Naturale Website", :name => "description"}/
+    %meta{:content => "vis.works", :name => "author"}/
+    %title
+      Bellezza Naturale#{" | #{@product_title}" if @product_title}
+      %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lobster", :rel => "stylesheet"}/
+    = stylesheet_link_tag "application", media: 'all', "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %link{:href => "http://fonts.googleapis.com/css?family=Muli", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Droid+Sans", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lobster", :rel => "stylesheet"}/
+  %body
+    .mainbox 
+      .container.maincont
+        = render :partial => 'layouts/navigation', :locals => {:lines => @lines, :categories => @categories}
+        = yield
+        .clear
+        #footer
+          %p#copyright &#169; Bellezza Naturale
+

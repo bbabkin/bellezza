@@ -1,0 +1,30 @@
+- @page_title = "Products"
+= link_to("Back to Lines", {:controller => 'lines', :action => 'index'}, :class => 'btn btn-primary')
+%br
+%br
+.Products.index
+  = link_to(" Add New Product", {:action => 'new'}, :class => 'btn btn-success')
+  %h2= @line.name + " Products"  
+
+
+  %table.listing{:summary => "Product list"}
+    %tr.header
+      %th &#160;
+      %th Product
+      %th Volume
+      %th Price
+      %th Image
+      %th Actions
+    - @products.each do |product|
+      %tr{:class => cycle('odd', 'even')}
+        %td.pad.center= product.position
+        %td.pad.center= product.name
+        %td.pad.center= product.volume
+        %td.pad.center= product.price
+        %td.pad.center=image_tag product.image.thumb.url
+        %td.actions
+          = link_to("Show", {:action => 'show', :id => product.id, line_id: @line.id}, class: "btn btn-primary")
+          = link_to("Edit", {:action => 'edit', :id => product.id, line_id: @line.id}, class: "btn btn-warning")
+          = link_to("Delete", {:action => 'delete', :id => product.id}, class: "btn btn-danger")
+
+

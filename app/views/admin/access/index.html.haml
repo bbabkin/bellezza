@@ -1,0 +1,10 @@
+- @page_title = "Admin Menu"
+.menu
+  %h2 Admin Menu
+  .identity
+    Logged in as: #{session[:username]}
+  %ul
+    %li= link_to("Manage Products", admin_lines_path, class: 'btn btn-primary')
+    %li= link_to("Manage Categories", admin_categories_path, class: 'btn btn-primary')
+    %li= link_to("Manage Admin Users", admin_admin_users_path, class: 'btn btn-primary')
+    %li= link_to("Logout", :action => 'logout', class: 'btn btn-primary')

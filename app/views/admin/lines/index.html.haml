@@ -1,0 +1,30 @@
+- @page_title = "Product Lines"
+.lines.index
+  = link_to("Back to Admin", admin_path, :class => 'btn btn-primary')
+  %h2 Product Lines
+  = link_to(" Add New Product Line", {:action => 'new'}, :class => 'btn btn-success')
+  %div
+    = "#{pluralize(@lines.size, 'product line')} found"
+  %table.tabl{:summary => "Product Line list"}
+    %tr.header
+      %th &#160;
+      %th Product Line
+      %th Visible
+      %th Product Amount
+      %th &#160;
+      %th.center Actions
+    - @lines.each do |line|
+      %tr{:class => cycle('odd', 'even')}
+        %td.colors.whitetext{:bgcolor => line.color}= line.position
+        %td.colors.whitetext{:bgcolor => line.color}= line.name
+        %td.center.colors.whitetext{:bgcolor => line.color}= status_tag(line.visible)
+        %td.center.colors.whitetext{:bgcolor => line.color}= line.products.size
+        %td.center.colors.whitetext{:bgcolor => line.color}
+          %span.blacktext text
+          %span.whitetext &#160text
+        %td.center
+
+          = link_to("View Products", {:controller => 'products', :line_id => line.id}, class: "btn btn-primary")
+          = link_to("Show", admin_line_path(line), class: "btn btn-primary")
+          = link_to("Edit", edit_admin_line_path(line), class: "btn btn-primary")
+          = link_to("Delete", delete_admin_line_path(line), class: "btn btn-danger")

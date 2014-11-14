@@ -1,0 +1,30 @@
+.navbar.navbar-bella{:role => "navigation"}
+	.navbar-header
+		%button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+			%span.sr-only Toggle navigation
+			%span.icon-bar
+			%span.icon-bar
+			%span.icon-bar
+		%a.small-brand{:href => "#"}=image_tag "logo_sm.png"
+	#bs-example-navbar-collapse-1.collapse.navbar-collapse
+		%ul.nav.navbar-nav-sq.navbar-right.mainnav
+			%li= link_to "About", :controller => "public", :action => "index"
+			%li.dropdown
+				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+					Products by line
+					%span.caret
+				%ul.dropdown-menu{:role => "menu"}
+					%li.lmenuitem.center.pad=image_tag ("drlauranne.png")
+					- lines.each do |line|
+						%li.lmenuitem{:class => "o_" + line.color}=link_to((@divin+line.name+@brk+line.description+@divout), line_path(line))
+			%li.dropdown
+				%a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+					by category
+					%span.caret
+				%ul.dropdown-menu.dropdown-menu-right{:role => "menu"}
+					%li.center.pad 
+					- categories.each do |category|
+						%li.lmenuitem{:class => ""}=link_to((@divinb+category.name+@divout), category_path(category))
+						%li.divider{:role => "presentation"}
+			%li= link_to "Locations", :controller => "public", :action => "index"
+

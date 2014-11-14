@@ -1,0 +1,61 @@
+%table{:summary => "Product form fields"}
+  %tr
+    %th= f.label(:line_id, "Product Line")
+    %td= f.select(:line_id, @lines.map {|s| [s.name, s.id]})
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@product_count)
+  %tr
+    %th= f.label(:name, "Name")
+    %td= f.text_field(:name)
+  %tr
+    %th= f.label(:volume)
+    %td= f.text_field(:volume)
+    %td= f.text_field(:volume2)
+    %td= f.text_field(:volume3)
+  %tr
+    %th= f.label(:price)
+    %td= f.text_field(:price)
+    %td= f.text_field(:price2)
+    %td= f.text_field(:price3)
+  %tr
+    %th= f.label(:special_price)
+    %td= f.text_field(:special_price)
+    %td= f.text_field(:special_price2)
+    %td= f.text_field(:special_price3)
+  %tr
+    %th= f.label(:code)
+    %td= f.text_field(:code)
+    %td= f.text_field(:code2)
+    %td= f.text_field(:code3)
+%table{:summary => "Product form fields2"}  
+  %tr
+    %th= f.label(:description)
+    %td= f.text_area(:description, :size=> '60x5')
+  %tr
+    %th= f.label(:skin_type)
+    %td= f.text_area(:skin_type, :size=> '60x5')
+  %tr
+    %th= f.label(:use)
+    %td= f.text_area(:use, :size=> '60x5')
+  %tr
+    %th= f.label(:contents)
+    %td= f.text_area(:contents, :size=> '60x5')
+  %tr
+    %th= f.label(:note)
+    %td= f.text_area(:note, :size=> '60x5')
+  %tr
+    %th= f.label(:permalink)
+    %td= f.text_field(:permalink)
+  %tr
+    %th= f.label(:visible)
+    %td= f.check_box(:visible)
+  %tr
+    %th= f.label(:image)
+    %td= f.file_field(:image)
+%table{:summary => "category"}  
+  %th= "Category:"
+  - for category in Category.all
+    %td.pad
+      .center= check_box_tag 'product[category_ids][]', category.id, @product.category_ids.include?(category.id), :id => dom_id(category)
+      = label_tag dom_id(category), category.name
